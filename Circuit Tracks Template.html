@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)file:///C:/Users/DasSystem/Desktop/Neuer%20Ordner/Circuit%20Tracks%20Template.html -->
+<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit Tracks Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #0a0a0a;
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #9d4edd;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+        .container {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            border: 1px solid #2a2a2a;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th {
+            background: linear-gradient(135deg, #7b2cbf 0%, #9d4edd 100%);
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #2a2a2a;
+            background: #1a1a1a;
+        }
+        tr:hover td {
+            background: #222;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+            background: #0f0f0f;
+            color: #e0e0e0;
+            transition: all 0.2s;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #9d4edd;
+            background: #1a1a1a;
+            box-shadow: 0 0 8px rgba(157, 78, 221, 0.3);
+        }
+        input[type="text"]::placeholder {
+            color: #555;
+        }
+        .slot-number {
+            font-weight: bold;
+            color: #9d4edd;
+            text-align: center;
+            width: 80px;
+            font-size: 1.1em;
+            text-shadow: 0 0 10px rgba(157, 78, 221, 0.5);
+        }
+        .info {
+            background: linear-gradient(135deg, #1a0f2e 0%, #1a1a2a 100%);
+            padding: 18px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            color: #bbb;
+            border-left: 4px solid #9d4edd;
+            font-size: 0.95em;
+        }
+        .buttons {
+            margin-top: 30px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        button {
+            background: linear-gradient(135deg, #7b2cbf 0%, #9d4edd 100%);
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(157, 78, 221, 0.3);
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(157, 78, 221, 0.5);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎹 Circuit Tracks</h1>
+        <div class="subtitle">Sample &amp; Patch Library Manager</div>
+        
+        <div class="info">
+            📝 Verwalte deine Sample Packs und Patches für alle 32 Slots. Deine Einträge werden automatisch im Browser gespeichert.
+        </div>
+
+        <table id="trackTable">
+            <thead>
+                <tr>
+                    <th>Slot</th>
+                    <th>Patch Name</th>
+                    <th>Sample Pack</th>
+                    <th>Notizen</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            <tr><td class="slot-number">1</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-1"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-1"></td><td><input type="text" placeholder="Notizen..." id="notes-1"></td></tr><tr><td class="slot-number">2</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-2"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-2"></td><td><input type="text" placeholder="Notizen..." id="notes-2"></td></tr><tr><td class="slot-number">3</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-3"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-3"></td><td><input type="text" placeholder="Notizen..." id="notes-3"></td></tr><tr><td class="slot-number">4</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-4"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-4"></td><td><input type="text" placeholder="Notizen..." id="notes-4"></td></tr><tr><td class="slot-number">5</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-5"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-5"></td><td><input type="text" placeholder="Notizen..." id="notes-5"></td></tr><tr><td class="slot-number">6</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-6"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-6"></td><td><input type="text" placeholder="Notizen..." id="notes-6"></td></tr><tr><td class="slot-number">7</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-7"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-7"></td><td><input type="text" placeholder="Notizen..." id="notes-7"></td></tr><tr><td class="slot-number">8</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-8"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-8"></td><td><input type="text" placeholder="Notizen..." id="notes-8"></td></tr><tr><td class="slot-number">9</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-9"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-9"></td><td><input type="text" placeholder="Notizen..." id="notes-9"></td></tr><tr><td class="slot-number">10</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-10"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-10"></td><td><input type="text" placeholder="Notizen..." id="notes-10"></td></tr><tr><td class="slot-number">11</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-11"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-11"></td><td><input type="text" placeholder="Notizen..." id="notes-11"></td></tr><tr><td class="slot-number">12</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-12"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-12"></td><td><input type="text" placeholder="Notizen..." id="notes-12"></td></tr><tr><td class="slot-number">13</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-13"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-13"></td><td><input type="text" placeholder="Notizen..." id="notes-13"></td></tr><tr><td class="slot-number">14</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-14"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-14"></td><td><input type="text" placeholder="Notizen..." id="notes-14"></td></tr><tr><td class="slot-number">15</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-15"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-15"></td><td><input type="text" placeholder="Notizen..." id="notes-15"></td></tr><tr><td class="slot-number">16</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-16"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-16"></td><td><input type="text" placeholder="Notizen..." id="notes-16"></td></tr><tr><td class="slot-number">17</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-17"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-17"></td><td><input type="text" placeholder="Notizen..." id="notes-17"></td></tr><tr><td class="slot-number">18</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-18"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-18"></td><td><input type="text" placeholder="Notizen..." id="notes-18"></td></tr><tr><td class="slot-number">19</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-19"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-19"></td><td><input type="text" placeholder="Notizen..." id="notes-19"></td></tr><tr><td class="slot-number">20</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-20"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-20"></td><td><input type="text" placeholder="Notizen..." id="notes-20"></td></tr><tr><td class="slot-number">21</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-21"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-21"></td><td><input type="text" placeholder="Notizen..." id="notes-21"></td></tr><tr><td class="slot-number">22</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-22"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-22"></td><td><input type="text" placeholder="Notizen..." id="notes-22"></td></tr><tr><td class="slot-number">23</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-23"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-23"></td><td><input type="text" placeholder="Notizen..." id="notes-23"></td></tr><tr><td class="slot-number">24</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-24"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-24"></td><td><input type="text" placeholder="Notizen..." id="notes-24"></td></tr><tr><td class="slot-number">25</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-25"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-25"></td><td><input type="text" placeholder="Notizen..." id="notes-25"></td></tr><tr><td class="slot-number">26</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-26"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-26"></td><td><input type="text" placeholder="Notizen..." id="notes-26"></td></tr><tr><td class="slot-number">27</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-27"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-27"></td><td><input type="text" placeholder="Notizen..." id="notes-27"></td></tr><tr><td class="slot-number">28</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-28"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-28"></td><td><input type="text" placeholder="Notizen..." id="notes-28"></td></tr><tr><td class="slot-number">29</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-29"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-29"></td><td><input type="text" placeholder="Notizen..." id="notes-29"></td></tr><tr><td class="slot-number">30</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-30"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-30"></td><td><input type="text" placeholder="Notizen..." id="notes-30"></td></tr><tr><td class="slot-number">31</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-31"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-31"></td><td><input type="text" placeholder="Notizen..." id="notes-31"></td></tr><tr><td class="slot-number">32</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-32"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-32"></td><td><input type="text" placeholder="Notizen..." id="notes-32"></td></tr><tr><td class="slot-number">1</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-1"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-1"></td><td><input type="text" placeholder="Notizen..." id="notes-1"></td></tr><tr><td class="slot-number">2</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-2"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-2"></td><td><input type="text" placeholder="Notizen..." id="notes-2"></td></tr><tr><td class="slot-number">3</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-3"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-3"></td><td><input type="text" placeholder="Notizen..." id="notes-3"></td></tr><tr><td class="slot-number">4</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-4"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-4"></td><td><input type="text" placeholder="Notizen..." id="notes-4"></td></tr><tr><td class="slot-number">5</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-5"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-5"></td><td><input type="text" placeholder="Notizen..." id="notes-5"></td></tr><tr><td class="slot-number">6</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-6"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-6"></td><td><input type="text" placeholder="Notizen..." id="notes-6"></td></tr><tr><td class="slot-number">7</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-7"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-7"></td><td><input type="text" placeholder="Notizen..." id="notes-7"></td></tr><tr><td class="slot-number">8</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-8"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-8"></td><td><input type="text" placeholder="Notizen..." id="notes-8"></td></tr><tr><td class="slot-number">9</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-9"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-9"></td><td><input type="text" placeholder="Notizen..." id="notes-9"></td></tr><tr><td class="slot-number">10</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-10"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-10"></td><td><input type="text" placeholder="Notizen..." id="notes-10"></td></tr><tr><td class="slot-number">11</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-11"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-11"></td><td><input type="text" placeholder="Notizen..." id="notes-11"></td></tr><tr><td class="slot-number">12</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-12"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-12"></td><td><input type="text" placeholder="Notizen..." id="notes-12"></td></tr><tr><td class="slot-number">13</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-13"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-13"></td><td><input type="text" placeholder="Notizen..." id="notes-13"></td></tr><tr><td class="slot-number">14</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-14"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-14"></td><td><input type="text" placeholder="Notizen..." id="notes-14"></td></tr><tr><td class="slot-number">15</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-15"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-15"></td><td><input type="text" placeholder="Notizen..." id="notes-15"></td></tr><tr><td class="slot-number">16</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-16"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-16"></td><td><input type="text" placeholder="Notizen..." id="notes-16"></td></tr><tr><td class="slot-number">17</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-17"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-17"></td><td><input type="text" placeholder="Notizen..." id="notes-17"></td></tr><tr><td class="slot-number">18</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-18"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-18"></td><td><input type="text" placeholder="Notizen..." id="notes-18"></td></tr><tr><td class="slot-number">19</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-19"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-19"></td><td><input type="text" placeholder="Notizen..." id="notes-19"></td></tr><tr><td class="slot-number">20</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-20"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-20"></td><td><input type="text" placeholder="Notizen..." id="notes-20"></td></tr><tr><td class="slot-number">21</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-21"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-21"></td><td><input type="text" placeholder="Notizen..." id="notes-21"></td></tr><tr><td class="slot-number">22</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-22"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-22"></td><td><input type="text" placeholder="Notizen..." id="notes-22"></td></tr><tr><td class="slot-number">23</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-23"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-23"></td><td><input type="text" placeholder="Notizen..." id="notes-23"></td></tr><tr><td class="slot-number">24</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-24"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-24"></td><td><input type="text" placeholder="Notizen..." id="notes-24"></td></tr><tr><td class="slot-number">25</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-25"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-25"></td><td><input type="text" placeholder="Notizen..." id="notes-25"></td></tr><tr><td class="slot-number">26</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-26"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-26"></td><td><input type="text" placeholder="Notizen..." id="notes-26"></td></tr><tr><td class="slot-number">27</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-27"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-27"></td><td><input type="text" placeholder="Notizen..." id="notes-27"></td></tr><tr><td class="slot-number">28</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-28"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-28"></td><td><input type="text" placeholder="Notizen..." id="notes-28"></td></tr><tr><td class="slot-number">29</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-29"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-29"></td><td><input type="text" placeholder="Notizen..." id="notes-29"></td></tr><tr><td class="slot-number">30</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-30"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-30"></td><td><input type="text" placeholder="Notizen..." id="notes-30"></td></tr><tr><td class="slot-number">31</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-31"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-31"></td><td><input type="text" placeholder="Notizen..." id="notes-31"></td></tr><tr><td class="slot-number">32</td><td><input type="text" placeholder="z.B. Bass Synth, Lead..." id="patch-32"></td><td><input type="text" placeholder="z.B. 808 Kit, Drum Pack..." id="sample-32"></td><td><input type="text" placeholder="Notizen..." id="notes-32"></td></tr></tbody>
+        </table>
+
+        <div class="buttons">
+            <button onclick="saveData()">💾 Speichern</button>
+            <button onclick="clearData()">🗑️ Alles löschen</button>
+            <button onclick="exportData()">📥 Exportieren (CSV)</button>
+        </div>
+    </div>
+
+    <script>
+        const tableData = {};
+
+        // Deine aktuellen Daten aus der zweiten Datei
+        const initialData = {
+            1: { patch: "Force Trulli/ASMR/BCDream", sample: "Force Trulli/808/100Samples", notes: "" },
+            2: { patch: "Cavangano/CoffeeBeats2", sample: "Analog DrumSamples", notes: "" },
+            3: { patch: "Electronica/Evolution/IvanMakes", sample: "AntoTechno", notes: "" },
+            4: { patch: "My/Retro", sample: "PaytonCarter", notes: "" },
+            5: { patch: "RMR2/RMR1", sample: "RMR2", notes: "" },
+            6: { patch: "Cavangaro/Ryan Neckel/Simpel", sample: "AntoTechno/DarkTapes", notes: "" },
+            7: { patch: "TeamNov/NewPatches", sample: "Electic", notes: "" },
+            8: { patch: "Ilbert909/SonicHorizons", sample: "Equninoxdusk", notes: "" },
+            9: { patch: "Synthwave80s/TBCircuit", sample: "FMDream", notes: "" },
+            10: { patch: "TomNapack/TTranq", sample: "FreePack/JimDrones", notes: "" },
+            11: { patch: "TBPack/MyPatches", sample: "PaytonCarter", notes: "" },
+            12: { patch: "80sPatches/RonCavagano", sample: "PsytecSampleSet", notes: "" },
+            13: { patch: "FF/Evolution", sample: "Evolution", notes: "" },
+            14: { patch: "TeamNovation//Ttranq", sample: "SANPoundingTechno", notes: "" },
+            15: { patch: "CoffeeBeats2/Factory/Simple", sample: "AnalogRythm/Rytm FX", notes: "" },
+            16: { patch: "Factory/TeamNovation", sample: "CircuitXOX", notes: "" },
+            17: { patch: "Tracks 1/2", sample: "LF PlanetX", notes: "" },
+            18: { patch: "NewPatches/SonicHorizons", sample: "TR-8", notes: "" },
+            19: { patch: "Factory/FTrulli/Garo/Electronica", sample: "GabeMiller", notes: "" },
+            20: { patch: "bert909/TomNapack", sample: "Drumstation", notes: "" },
+            21: { patch: "TeamNova/Simple", sample: "XOX", notes: "" },
+            22: { patch: "BigCity", sample: "Psyset", notes: "" },
+            23: { patch: "AllStarPack", sample: "", notes: "" },
+            24: { patch: "Pack080907", sample: "", notes: "" },
+            25: { patch: "SynthwavePack", sample: "", notes: "" },
+            26: { patch: "Post Industrial PunchPack", sample: "", notes: "" }
+            // Slots 27–32 bleiben leer (wie in deiner Textdatei)
+        };
+
+        function initTable() {
+            const tbody = document.getElementById('tableBody');
+            
+            for (let i = 1; i <= 32; i++) {
+                const row = tbody.insertRow();
+                
+                const cellSlot = row.insertCell(0);
+                cellSlot.className = 'slot-number';
+                cellSlot.textContent = i;
+                
+                const cellPatch = row.insertCell(1);
+                const inputPatch = document.createElement('input');
+                inputPatch.type = 'text';
+                inputPatch.placeholder = 'z.B. Bass Synth, Lead...';
+                inputPatch.id = `patch-${i}`;
+                inputPatch.addEventListener('input', () => autoSave());
+                cellPatch.appendChild(inputPatch);
+                
+                const cellSample = row.insertCell(2);
+                const inputSample = document.createElement('input');
+                inputSample.type = 'text';
+                inputSample.placeholder = 'z.B. 808 Kit, Drum Pack...';
+                inputSample.id = `sample-${i}`;
+                inputSample.addEventListener('input', () => autoSave());
+                cellSample.appendChild(inputSample);
+                
+                const cellNotes = row.insertCell(3);
+                const inputNotes = document.createElement('input');
+                inputNotes.type = 'text';
+                inputNotes.placeholder = 'Notizen...';
+                inputNotes.id = `notes-${i}`;
+                inputNotes.addEventListener('input', () => autoSave());
+                cellNotes.appendChild(inputNotes);
+            }
+            
+            loadData();
+        }
+
+        function autoSave() {
+            for (let i = 1; i <= 32; i++) {
+                tableData[i] = {
+                    patch: document.getElementById(`patch-${i}`).value,
+                    sample: document.getElementById(`sample-${i}`).value,
+                    notes: document.getElementById(`notes-${i}`).value
+                };
+            }
+            localStorage.setItem('circuitTracksData', JSON.stringify(tableData));
+        }
+
+        function saveData() {
+            autoSave();
+            alert('✅ Daten gespeichert!');
+        }
+
+        function loadData() {
+            const saved = localStorage.getItem('circuitTracksData');
+            let data = saved ? JSON.parse(saved) : initialData;
+
+            for (let i = 1; i <= 32; i++) {
+                const entry = data[i] || { patch: '', sample: '', notes: '' };
+                document.getElementById(`patch-${i}`).value = entry.patch;
+                document.getElementById(`sample-${i}`).value = entry.sample;
+                document.getElementById(`notes-${i}`).value = entry.notes;
+            }
+        }
+
+        function clearData() {
+            if (confirm('⚠️ Möchtest du wirklich alle Einträge löschen?')) {
+                localStorage.removeItem('circuitTracksData');
+                for (let i = 1; i <= 32; i++) {
+                    document.getElementById(`patch-${i}`).value = '';
+                    document.getElementById(`sample-${i}`).value = '';
+                    document.getElementById(`notes-${i}`).value = '';
+                }
+                alert('🗑️ Alle Daten wurden gelöscht!');
+            }
+        }
+
+        function exportData() {
+            let csv = 'Slot,Patch,Sample Pack,Notizen\n';
+            for (let i = 1; i <= 32; i++) {
+                const patch = document.getElementById(`patch-${i}`).value.replace(/"/g, '""');
+                const sample = document.getElementById(`sample-${i}`).value.replace(/"/g, '""');
+                const notes = document.getElementById(`notes-${i}`).value.replace(/"/g, '""');
+                csv += `${i},"${patch}","${sample}","${notes}"\n`;
+            }
+            
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'circuit_tracks_samples.csv';
+            link.click();
+        }
+
+        initTable();
+    </script>
+
+</body></html>
